@@ -18,7 +18,7 @@ export class ContactObj implements Contact {
     birthday = '',
     photo = '',
     userId: number | null = null,
-    id?: number | undefined
+    id?: number | undefined,
   ) {
     this.name = name;
     this.email = email;

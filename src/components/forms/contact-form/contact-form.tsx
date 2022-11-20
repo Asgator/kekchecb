@@ -43,13 +43,13 @@ const ContactForm: React.FC<Props> = ({
       state.birthday.value,
       state.photo.value,
       userId,
-      contact?.id
+      contact?.id,
     );
   };
 
   const fieldChangeHandler = (
     key: keyof ContactFormState,
-    newValue: string
+    newValue: string,
   ) => {
     setState({
       ...state,
@@ -86,7 +86,6 @@ const ContactForm: React.FC<Props> = ({
 
   useEffect(() => {
     console.log(status);
-    
 
     if (status === 'fulfilled' || status === 'rejected') {
       setDeleting(false);

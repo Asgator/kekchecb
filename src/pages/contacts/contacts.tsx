@@ -23,7 +23,7 @@ const Contacts = () => {
 
   const [popupVisible, setPopupVisible] = useState(false);
   const [popupContact, setPopupContact] = useState<Contact | undefined>(
-    undefined
+    undefined,
   );
   const [filtredList, setFiltredList] = useState<Contact[] | null>(null);
   const [isFetching, setIsFetching] = useState(false);
@@ -43,7 +43,7 @@ const Contacts = () => {
   const searchContact = (name: string): void => {
     name
       ? setFiltredList(
-          list.filter((contact) => RegExp(name, 'i').test(contact.name))
+          list.filter((contact) => RegExp(name, 'i').test(contact.name)),
         )
       : setFiltredList(list);
   };

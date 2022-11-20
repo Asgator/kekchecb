@@ -18,7 +18,7 @@ const Search: React.FC<Props> = ({ onSearch }) => {
   };
 
   const onSearchInput: React.ChangeEventHandler<HTMLInputElement> = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     setSearchValue(e.target.value);
     onSearch(e.target.value);

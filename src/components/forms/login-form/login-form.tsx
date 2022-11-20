@@ -37,7 +37,7 @@ const LoginForm: FC<Props> = ({ onSubmit, isFetching = false }) => {
 
   const fieldChangeHandler = (
     key: keyof LoginFormState,
-    newValue: string | boolean
+    newValue: string | boolean,
   ) => {
     setState({
       ...state,

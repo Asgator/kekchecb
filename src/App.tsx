@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import Auth from './pages/auth/Auth';
 import Contacts from './pages/contacts/contacts';
 

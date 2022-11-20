@@ -21,7 +21,7 @@ const ContactEditor: React.FC<Props> = ({ contact, onCancel }) => {
   const onSubmit = async (data: Contact) => {
     if (contact) {
       const result = await dispatch(
-        editContact({ contact: data, accessToken })
+        editContact({ contact: data, accessToken }),
       );
 
       if (editContact.fulfilled.match(result)) {
@@ -32,7 +32,7 @@ const ContactEditor: React.FC<Props> = ({ contact, onCancel }) => {
       }
     } else {
       const result = await dispatch(
-        createContact({ contact: data, accessToken })
+        createContact({ contact: data, accessToken }),
       );
 
       if (createContact.fulfilled.match(result)) {

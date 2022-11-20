@@ -28,7 +28,7 @@ const getRandomPhoto = (): string => {
   const random = (n: number) => Math.round(Math.random() * n);
 
   return `https://randomuser.me/api/portraits/${gender[random(1)]}/${random(
-    90
+    90,
   )}.jpg`;
 };
 
@@ -47,7 +47,7 @@ export const getContacts = createAsyncThunk<Contact[], string>(
     });
 
     return (await response.json()) as Contact[];
-  }
+  },
 );
 
 export const createContact = createAsyncThunk<
@@ -97,10 +97,6 @@ export const deleteContact = createAsyncThunk<
   { id: number; accessToken: string },
   { rejectValue: string; dispatch: AppDispatch }
 >('contacts/deleteContact', async ({ id, accessToken }, thunkAPI) => {
-  
-
-
-
   const response = await fetch(BASE_URL + `/${id}`, {
     method: 'DELETE',
     headers: {
@@ -120,13 +116,9 @@ export const contactsSlice = createSlice({
   initialState,
   reducers: {
     deleteListItem: (state, action: PayloadAction<number>) => {
-      
-      
-
       const index = state.list.findIndex(
-        (contact) => contact.id === action.payload
+        (contact) => contact.id === action.payload,
       );
-      
 
       state.list.splice(index, 1);
     },
@@ -161,7 +153,7 @@ export const contactsSlice = createSlice({
 
     builder.addCase(editContact.fulfilled, (state, action) => {
       const index = state.list.findIndex(
-        (contact) => contact.id === action.payload.id
+        (contact) => contact.id === action.payload.id,
       );
 
       state.list.splice(index, 1, action.payload);

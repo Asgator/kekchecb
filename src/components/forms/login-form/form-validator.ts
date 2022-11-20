@@ -2,7 +2,7 @@ import { LoginFormState } from '../../../classes/login-form-state';
 
 export const validateForm = (
   formState: LoginFormState,
-  setState: React.Dispatch<React.SetStateAction<LoginFormState>>
+  setState: React.Dispatch<React.SetStateAction<LoginFormState>>,
 ): boolean => {
   let result = true;
   const state = Object.assign({}, formState);

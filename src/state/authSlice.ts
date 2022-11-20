@@ -44,7 +44,7 @@ export const loginUser = createAsyncThunk<
         headers: {
           Authorization: `Bearer ${data.grantAccess.accessToken}`,
         },
-      }
+      },
     );
     if (response.ok) {
       const user = await response.json();
@@ -106,7 +106,7 @@ export const authSlice = createSlice({
           JSON.stringify({
             id: state.id,
             accessToken: action.payload.accessToken,
-          })
+          }),
         );
       } else {
         sessionStorage.setItem(
@@ -114,7 +114,7 @@ export const authSlice = createSlice({
           JSON.stringify({
             id: state.id,
             accessToken: action.payload.accessToken,
-          })
+          }),
         );
       }
     });

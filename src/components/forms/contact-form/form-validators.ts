@@ -2,7 +2,7 @@ import { ContactFormState } from '../../../classes/contact-form-state';
 
 const validateForm = (
   state: ContactFormState,
-  setState: React.Dispatch<React.SetStateAction<ContactFormState>>
+  setState: React.Dispatch<React.SetStateAction<ContactFormState>>,
 ): boolean => {
   let result = true;
 
